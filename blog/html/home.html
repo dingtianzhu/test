@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>首页</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/codemirror.css">
+	<link rel="stylesheet" href="../css/foldgutter.css">
+	<link rel="stylesheet" href="../css/dialog.css">
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+	<link rel="stylesheet" href="../css/theme/material.css">
+	<link rel="stylesheet" href="../css/theme/dracula.css">
+	<link rel="stylesheet" href="../css/theme/idea.css">
+	<link rel="stylesheet" href="../css/theme/lucario.css">
+	<link rel="stylesheet" href="../css/theme/mbo.css">
+	<link rel="stylesheet" href="../css/theme/monokai.css">
+	<link rel="stylesheet" href="../css/theme/neat.css">
+	<link rel="stylesheet" href="../css/theme/neo.css">
+	<link rel="stylesheet" href="../css/theme/nord.css">
+	<link rel="stylesheet" href="../css/theme/yeti.css">
+
+    <script src="../js/vue.js"></script>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/codemirror.js"></script>
+	<script src="../js/markView.js"></script>
+	<script src="../js/sublime.js"></script>
+	<script src="../js/javascript.js"></script>
+
+</head>
+<body>
+
+	<div id="index">
+		<div class="left" >
+			<div class="image">
+				<img src="../images/touxiang.jpg" alt="">
+			</div>
+
+			<ul id="menu">
+				<menu-li v-for="(list,index) in lists"  :index="index" :list="list" :name.sync="activeVal":show.sync="show"></menu-li>
+
+			</ul>
+		</div>
+		<div class="right">
+			<div id="right">
+				<right-content v-for="(list,index) in lists" :name.sync="show" :list="list" :add.sync="add" class ="noshow":class="{show:index==show}">
+
+				</right-content>
+				<right-add class="addRight" v-show="add"></right-add>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="../js/my.js"></script>
+</body>
+</html>
+
